@@ -1,0 +1,33 @@
+{
+  "name": "pangaea-notification-system",
+  "version": "1.0.0",
+  "description": "A notification system that maps topics to subscribers. When a message is published on a topic, it is forwarded to all the enrolled subscriber endpoints\"",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently \"npm run publisher-server\" \"npm run subscriber-server\"",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "publisher-server": "node ./publisher-server/index.js --ignore subscriber-server",
+    "subscriber-server": "node ./subscriber-servers/index.js --prefix subscriber-server",
+    "dev": ""
+  },
+  "keywords": [
+    "notification-system"
+  ],
+  "author": "Adewale Balogun",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "body-parser": "^1.19.0",
+    "concurrently": "^5.3.0",
+    "connect-mongo": "^3.2.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "express-validator": "^6.9.2",
+    "lodash": "^4.17.20",
+    "method-override": "^3.0.0",
+    "moment": "^2.29.1",
+    "moment-timezone": "^0.5.32",
+    "mongoose": "^5.11.12",
+    "request": "^2.88.2"
+  }
+}
